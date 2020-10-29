@@ -6,6 +6,11 @@ extern AA::Application* AA::CreateApplication();
 
 int main(int argc, char** argv)
 {
+	AA::Log::Init();
+	AA_CORE_WARN("Initialized Log!");
+	int a = 5;
+	AA_INFO("Hello! Var={0}", a);
+
 	auto app = AA::CreateApplication();
 	app->Run();
 	delete app;
@@ -16,6 +21,10 @@ int main(int argc, char** argv)
 
 	int main(int argc, char** argv)
 	{
+		AA::Log::Init();
+		AA_CORE_WARN("Initialized Log!");
+		int a = 5;
+		AA_INFO("Hello! Var={0}", a);
 		auto app = AA::CreateApplication();
 		app->Run();
 		delete app;
