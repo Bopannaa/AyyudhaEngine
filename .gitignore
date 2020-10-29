@@ -3,6 +3,7 @@
 .vs/
 bin/
 bin-int/
+.vscode/
 
 CMakeLists.txt.user
 CMakeCache.txt
