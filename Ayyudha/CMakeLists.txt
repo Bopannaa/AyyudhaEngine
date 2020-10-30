@@ -17,7 +17,11 @@ set(SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/application.cpp
 set(HDRS ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/application.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/core.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/entrypoint.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/log.h)
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/log.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/events/event.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/events/applicationEvent.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/events/mouseEvent.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/events/keyEvent.h)
 
 add_library(${PROJECT_NAME} STATIC ${SRCS} ${HDRS})
 
