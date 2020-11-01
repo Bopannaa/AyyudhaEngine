@@ -1,3 +1,6 @@
 [submodule "Ayyudha/dependencies/spdlog"]
 	path = Ayyudha/dependencies/spdlog
 	url = git@github.com:Bopannaa/spdlog.git
+[submodule "Ayyudha/dependencies/glfw"]
+	path = Ayyudha/dependencies/glfw
+	url = git@github.com:Bopannaa/glfw.git

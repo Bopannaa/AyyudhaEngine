@@ -11,8 +11,16 @@ set (SPDLOG_INSTALL OFF)
 set (CMAKE_BUILD_TYPE "Debug")
 add_subdirectory(dependencies/spdlog)
 
+set (GLFW_BUILD_DOCS OFF)
+set (GLFW_BUILD_EXAMPLES OFF)
+set (GLFW_BUILD_TESTS OFF)
+set (GLFW_INSTALL OFF)
+set (CMAKE_BUILD_TYPE "Debug")
+add_subdirectory(dependencies/glfw)
+
 set(SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/application.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/log.cpp)
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/log.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxWindow.cpp)
 
 set(HDRS ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/application.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/core.h
@@ -21,7 +29,9 @@ set(HDRS ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/application.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/events/event.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/events/applicationEvent.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/events/mouseEvent.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/events/keyEvent.h)
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/events/keyEvent.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/window.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxWindow.h)
 
 add_library(${PROJECT_NAME} STATIC ${SRCS} ${HDRS})
 
@@ -37,15 +47,16 @@ target_link_libraries(${PROJECT_NAME} -lXrandr
                                         -lpthread
                                         -lstdc++fs)
 
-target_link_libraries(${PROJECT_NAME} spdlog)
+target_link_libraries(${PROJECT_NAME} spdlog glfw)
 
 target_include_directories(${PROJECT_NAME}
     PUBLIC ${CMAKE_SOURCE_DIR}/AyyudhaEngine/Ayyudha/src)
 
 target_include_directories(${PROJECT_NAME}
-    PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/spdlog/include)
+    PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/spdlog/include
+    PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/Ayyudha/dependencies/glfw/include)
 
-target_compile_definitions(${PROJECT_NAME} PUBLIC -DAA_PLATFORM_LINUX -DAA_BUILD_STATIC)
+target_compile_definitions(${PROJECT_NAME} PUBLIC -DAA_PLATFORM_LINUX -DAA_ENABLE_ASSERTS -DAA_BUILD_DLL)
                             
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 17)
 
