@@ -2,8 +2,6 @@
 
 #include "event.h"
 
-#include <sstream>
-
 namespace AA {
 
 	class AYYUDHA_API KeyEvent : public Event

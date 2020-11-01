@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.16)
 
 project(Ayyudha
         VERSION 1.0.0
@@ -24,6 +24,8 @@ set(HDRS ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/application.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/events/keyEvent.h)
 
 add_library(${PROJECT_NAME} STATIC ${SRCS} ${HDRS})
+
+target_precompile_headers(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src/aapch.h)
 
 target_link_libraries(${PROJECT_NAME} -lXrandr
                                         -lXi
