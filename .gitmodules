@@ -4,3 +4,6 @@
 [submodule "Ayyudha/dependencies/glfw"]
 	path = Ayyudha/dependencies/glfw
 	url = git@github.com:Bopannaa/glfw.git
+[submodule "Ayyudha/dependencies/glad"]
+	path = Ayyudha/dependencies/glad
+	url = git@github.com:Bopannaa/glad.git
