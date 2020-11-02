@@ -20,7 +20,9 @@ add_subdirectory(dependencies/glfw)
 
 set(SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/application.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/log.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxWindow.cpp)
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxWindow.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/layer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/layerStack.cpp)
 
 set(HDRS ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/application.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/core.h
@@ -31,7 +33,9 @@ set(HDRS ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/application.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/events/mouseEvent.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/events/keyEvent.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/window.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxWindow.h)
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxWindow.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/layer.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/layerStack.h)
 
 add_library(${PROJECT_NAME} STATIC ${SRCS} ${HDRS})
 
