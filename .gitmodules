@@ -7,3 +7,6 @@
 [submodule "Ayyudha/dependencies/glad"]
 	path = Ayyudha/dependencies/glad
 	url = git@github.com:Bopannaa/glad.git
+[submodule "Ayyudha/dependencies/imgui"]
+	path = Ayyudha/dependencies/imgui
+	url = git@github.com:Bopannaa/imgui.git

@@ -22,11 +22,16 @@ set (GLAD_PROFILE "core")
 set (CMAKE_BUILD_TYPE "Debug")
 add_subdirectory(dependencies/glad)
 
+set (CMAKE_BUILD_TYPE "Debug")
+add_subdirectory(dependencies/imgui)
+
 set(SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/application.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/log.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxWindow.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/layer.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/layerStack.cpp)
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/layerStack.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/imgui/imguiLayer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/imguiOpenglRenderer.cpp)
 
 set(HDRS ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/application.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/core.h
@@ -39,7 +44,9 @@ set(HDRS ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/application.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/window.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxWindow.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/layer.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/layerStack.h)
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/layerStack.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/imgui/imguiLayer.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/imguiOpenglRenderer.h)
 
 add_library(${PROJECT_NAME} STATIC ${SRCS} ${HDRS})
 
@@ -55,10 +62,11 @@ target_link_libraries(${PROJECT_NAME} -lXrandr
                                         -lpthread
                                         -lstdc++fs)
 
-target_link_libraries(${PROJECT_NAME} spdlog glfw glad)
+target_link_libraries(${PROJECT_NAME} spdlog glfw glad imgui)
 
 target_include_directories(${PROJECT_NAME}
-    PUBLIC ${CMAKE_SOURCE_DIR}/AyyudhaEngine/Ayyudha/src)
+    PUBLIC ${CMAKE_SOURCE_DIR}/AyyudhaEngine/Ayyudha/src
+    PUBLIC ${CMAKE_SOURCE_DIR}/AyyudhaEngine/Ayyudha/dependencies/imgui)
 
 target_include_directories(${PROJECT_NAME}
     PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/spdlog/include

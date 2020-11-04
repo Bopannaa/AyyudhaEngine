@@ -8,7 +8,8 @@
 #include "ayyudha/events/event.h"
 #include "ayyudha/layerStack.h"
 
-namespace AA {
+namespace AA
+{
 
 	class AYYUDHA_API Application
 	{
@@ -17,18 +18,26 @@ namespace AA {
 		virtual ~Application();
 
 		void Run();
-		void OnEvent(Event& e);
+		void OnEvent(Event &e);
 
-		void PushLayer(Layer* layer);
-		void PushOverlay(Layer* layer);
-	private:
-		std::unique_ptr<Window> m_Window;
-		bool m_Running = true;
-		bool OnWindowClose(WindowCloseEvent& e);
-		LayerStack m_LayerStack;
-	};
+		void PushLayer(Layer *layer);
+		void PushOverlay(Layer *layer);
+		
+		inline Window &GetWindow() { return *m_Window; }
 
-	// To be defined in CLIENT
-	Application* CreateApplication();
+		inline static Application &Get(){	return *s_Instance; }
 
-}
+		private:
+			std::unique_ptr<Window> m_Window;
+			bool m_Running = true;
+			bool OnWindowClose(WindowCloseEvent & e);
+			LayerStack m_LayerStack;
+
+		private:
+			static Application *s_Instance;
+		};
+
+		// To be defined in CLIENT
+		Application *CreateApplication();
+
+	} // namespace AA
