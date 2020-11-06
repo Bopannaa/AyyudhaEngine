@@ -31,7 +31,8 @@ set(SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/application.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/layer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/layerStack.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/imgui/imguiLayer.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/imguiOpenglRenderer.cpp)
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/imguiOpenglRenderer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxInput.cpp)
 
 set(HDRS ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/application.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/core.h
@@ -46,7 +47,9 @@ set(HDRS ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/application.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/layer.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/layerStack.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/imgui/imguiLayer.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/imguiOpenglRenderer.h)
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/imguiOpenglRenderer.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/input.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxInput.h)
 
 add_library(${PROJECT_NAME} STATIC ${SRCS} ${HDRS})
 
