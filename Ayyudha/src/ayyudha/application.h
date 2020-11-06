@@ -8,6 +8,8 @@
 #include "ayyudha/events/event.h"
 #include "ayyudha/layerStack.h"
 
+#include "ayyudha/imgui/imguiLayer.h"
+
 namespace AA
 {
 
@@ -29,6 +31,7 @@ namespace AA
 
 		private:
 			std::unique_ptr<Window> m_Window;
+			ImGuiLayer* m_ImGuiLayer;
 			bool m_Running = true;
 			bool OnWindowClose(WindowCloseEvent & e);
 			LayerStack m_LayerStack;
