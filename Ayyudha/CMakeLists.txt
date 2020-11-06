@@ -25,6 +25,9 @@ add_subdirectory(dependencies/glad)
 set (CMAKE_BUILD_TYPE "Debug")
 add_subdirectory(dependencies/imgui)
 
+set(glm_DIR dependencies/glm/cmake/glm) # if necessary
+find_package(glm REQUIRED)
+
 set(SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/application.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/log.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxWindow.cpp
@@ -67,7 +70,7 @@ target_link_libraries(${PROJECT_NAME} -lXrandr
                                         -lpthread
                                         -lstdc++fs)
 
-target_link_libraries(${PROJECT_NAME} spdlog glfw glad imgui)
+target_link_libraries(${PROJECT_NAME} spdlog glfw glad imgui glm::glm)
 
 target_include_directories(${PROJECT_NAME}
     PUBLIC ${CMAKE_SOURCE_DIR}/AyyudhaEngine/Ayyudha/src

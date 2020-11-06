@@ -10,3 +10,6 @@
 [submodule "Ayyudha/dependencies/imgui"]
 	path = Ayyudha/dependencies/imgui
 	url = git@github.com:Bopannaa/imgui.git
+[submodule "Ayyudha/dependencies/glm"]
+	path = Ayyudha/dependencies/glm
+	url = git@github.com:Bopannaa/glm.git
