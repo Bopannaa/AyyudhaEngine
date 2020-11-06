@@ -3,6 +3,9 @@
 #include "ayyudha/events/applicationEvent.h"
 #include <glad/glad.h>
 
+
+#include "input.h"
+
 namespace AA
 {
 	Application* Application::s_Instance = nullptr;

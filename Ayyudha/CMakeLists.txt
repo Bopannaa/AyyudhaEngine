@@ -49,7 +49,9 @@ set(HDRS ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/application.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/imgui/imguiLayer.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/imguiOpenglRenderer.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/input.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxInput.h)
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxInput.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/keyCodes.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/mouseButtonCodes.h)
 
 add_library(${PROJECT_NAME} STATIC ${SRCS} ${HDRS})
 

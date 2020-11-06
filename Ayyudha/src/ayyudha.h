@@ -7,6 +7,10 @@
 #include "ayyudha/log.h"
 #include "ayyudha/layer.h"
 
+#include "ayyudha/input.h"
+#include "ayyudha/keyCodes.h"
+#include "ayyudha/mouseButtonCodes.h"
+
 #include "ayyudha/imgui/imguiLayer.h"
 
 // ---Entry Point---------------------
