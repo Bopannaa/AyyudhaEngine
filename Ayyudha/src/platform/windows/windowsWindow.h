@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ayyudha/window.h"
-
+#include "ayyudha/renderer/graphicsContext.h"
 #include <GLFW/glfw3.h>
 
 namespace AA {
@@ -28,6 +28,7 @@ namespace AA {
 		virtual void Shutdown();
 	private:
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 
 		struct WindowData
 		{
