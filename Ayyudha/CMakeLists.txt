@@ -38,12 +38,14 @@ set(SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/imgui/imguiBuild.cpp
     
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/shader.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/buffer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/renderer.cpp
     
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxWindow.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxInput.cpp
     
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglContext.cpp
-    )
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglBuffer.cpp)
 
 set(HDRS 
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/application.h
@@ -60,6 +62,8 @@ set(HDRS
 
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/graphicsContext.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/shader.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/buffer.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/renderer.h
 
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/events/event.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/events/applicationEvent.h
@@ -69,7 +73,8 @@ set(HDRS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxWindow.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxInput.h
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglContext.h)
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglContext.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglBuffer.h)
 
 add_library(${PROJECT_NAME} STATIC ${SRCS} ${HDRS})
 
