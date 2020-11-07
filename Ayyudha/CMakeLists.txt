@@ -28,34 +28,47 @@ add_subdirectory(dependencies/imgui)
 set(glm_DIR dependencies/glm/cmake/glm) # if necessary
 find_package(glm REQUIRED)
 
-set(SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/application.cpp
+set(SRCS 
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/application.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/log.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxWindow.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/layer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/layerStack.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/imgui/imguiLayer.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxInput.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/imgui/imguiBuild.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglContext.cpp)
 
-set(HDRS ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/application.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/imgui/imguiLayer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/imgui/imguiBuild.cpp
+    
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/shader.cpp
+    
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxWindow.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxInput.cpp
+    
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglContext.cpp
+    )
+
+set(HDRS 
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/application.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/core.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/entrypoint.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/log.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/events/event.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/events/applicationEvent.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/events/mouseEvent.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/events/keyEvent.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/window.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxWindow.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/layer.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/layerStack.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/imgui/imguiLayer.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/input.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxInput.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/keyCodes.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/mouseButtonCodes.h
+
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/graphicsContext.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/shader.h
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/events/event.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/events/applicationEvent.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/events/mouseEvent.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/events/keyEvent.h
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxWindow.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxInput.h
+
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglContext.h)
 
 add_library(${PROJECT_NAME} STATIC ${SRCS} ${HDRS})
