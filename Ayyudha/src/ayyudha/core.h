@@ -1,14 +1,22 @@
 #pragma once
 
 #if defined AA_PLATFORM_WINDOWS
-	#ifdef AA_BUILD_DLL
-		#define AYYUDHA_API __declspec(dllexport)
+	#ifdef AA_DYNAMIC_LINK
+		#ifdef AA_BUILD_DLL
+			#define AYYUDHA_API __declspec(dllexport)
+		#else
+			#define AYYUDHA_API __declspec(dllimport)
+		#endif
 	#else
-		#define AYYUDHA_API __declspec(dllimport)
+		#define AYYUDHA_API
 	#endif
 #elif defined AA_PLATFORM_LINUX
-	#ifdef AA_BUILD_DLL
-		#define AYYUDHA_API __attribute__((visibility("default")))
+	#ifdef AA_DYNAMIC_LINK
+		#ifdef AA_BUILD_DLL
+			#define AYYUDHA_API __attribute__((visibility("default")))
+		#else
+			#define AYYUDHA_API
+		#endif
 	#else
 		#define AYYUDHA_API
 	#endif
