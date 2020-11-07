@@ -8,9 +8,4 @@ namespace AA {
 	{
 	}
 
-	Layer::~Layer()
-	{
-
-	}
-
 }
