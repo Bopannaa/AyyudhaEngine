@@ -43,6 +43,7 @@ set(SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/vertexArray.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/renderCommand.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/rendererAPI.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/orthographicCamera.cpp
     
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxWindow.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxInput.cpp
@@ -72,6 +73,7 @@ set(HDRS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/vertexArray.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/renderCommand.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/rendererAPI.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/orthographicCamera.h
 
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/events/event.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/events/applicationEvent.h

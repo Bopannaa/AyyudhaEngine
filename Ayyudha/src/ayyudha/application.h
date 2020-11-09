@@ -14,6 +14,8 @@
 #include "ayyudha/renderer/buffer.h"
 #include "ayyudha/renderer/vertexArray.h"
 
+#include "ayyudha/renderer/orthographicCamera.h"
+
 namespace AA
 {
 
@@ -45,6 +47,8 @@ namespace AA
 
 		std::shared_ptr<Shader> m_BlueShader;
 		std::shared_ptr<VertexArray> m_SquareVA;
+
+		OrthographicCamera m_Camera;
 
 	private:
 		static Application *s_Instance;
