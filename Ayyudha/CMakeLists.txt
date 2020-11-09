@@ -41,13 +41,16 @@ set(SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/buffer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/renderer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/vertexArray.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/renderCommand.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/rendererAPI.cpp
     
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxWindow.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxInput.cpp
     
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglContext.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglBuffer.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglVertexArray.cpp)
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglVertexArray.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglRendererAPI.cpp)
 
 set(HDRS 
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/application.h
@@ -67,6 +70,8 @@ set(HDRS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/buffer.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/renderer.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/vertexArray.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/renderCommand.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/rendererAPI.h
 
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/events/event.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/events/applicationEvent.h
@@ -78,7 +83,8 @@ set(HDRS
 
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglContext.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglBuffer.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglVertexArray.h)
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglVertexArray.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglRendererAPI.h)
 
 add_library(${PROJECT_NAME} STATIC ${SRCS} ${HDRS})
 
