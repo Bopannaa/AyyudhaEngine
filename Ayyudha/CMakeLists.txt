@@ -51,7 +51,8 @@ set(SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglContext.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglBuffer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglVertexArray.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglRendererAPI.cpp)
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglRendererAPI.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglShader.cpp)
 
 set(HDRS 
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/core/timestep.h
@@ -87,7 +88,8 @@ set(HDRS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglContext.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglBuffer.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglVertexArray.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglRendererAPI.h)
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglRendererAPI.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglShader.h)
 
 add_library(${PROJECT_NAME} STATIC ${SRCS} ${HDRS})
 
