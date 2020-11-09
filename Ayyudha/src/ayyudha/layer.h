@@ -2,6 +2,7 @@
 #pragma once
 
 #include "ayyudha/core.h"
+#include "ayyudha/core/timestep.h"
 #include "ayyudha/events/event.h"
 
 namespace AA {
@@ -14,7 +15,7 @@ namespace AA {
 
 		virtual void OnAttach() {}
 		virtual void OnDetach() {}
-		virtual void OnUpdate() {}
+		virtual void OnUpdate(Timestep ts) {}
 		virtual void OnImGuiRender() {}
 		virtual void OnEvent(Event& event) {}
 

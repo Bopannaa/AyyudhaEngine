@@ -54,6 +54,7 @@ set(SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglRendererAPI.cpp)
 
 set(HDRS 
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/core/timestep.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/application.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/core.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/entrypoint.h

@@ -10,16 +10,10 @@
 
 #include "ayyudha/imgui/imguiLayer.h"
 
-#include "ayyudha/renderer/shader.h"
-#include "ayyudha/renderer/buffer.h"
-#include "ayyudha/renderer/vertexArray.h"
-
-#include "ayyudha/renderer/orthographicCamera.h"
-
 namespace AA
 {
 
-	class AYYUDHA_API Application
+	class  Application
 	{
 	public:
 		Application();
@@ -42,13 +36,7 @@ namespace AA
 		bool OnWindowClose(WindowCloseEvent &e);
 		LayerStack m_LayerStack;
 
-		std::shared_ptr<Shader> m_Shader;
-		std::shared_ptr<VertexArray> m_VertexArray;
-
-		std::shared_ptr<Shader> m_BlueShader;
-		std::shared_ptr<VertexArray> m_SquareVA;
-
-		OrthographicCamera m_Camera;
+		float m_LastFrameTime = 0.0f;
 
 	private:
 		static Application *s_Instance;
