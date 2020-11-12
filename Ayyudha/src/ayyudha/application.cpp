@@ -8,11 +8,14 @@
 
 #include <GLFW/glfw3.h>
 
+#include <filesystem>
+
 namespace AA
 {
 	Application *Application::s_Instance = nullptr;
 
-	Application::Application()
+	Application::Application(std::string base_directory)
+		: m_BaseDirectory(base_directory)
 	{
 		AA_CORE_ASSERT(!s_Instance, "Application already exists!");
 		s_Instance = this;
@@ -71,6 +74,32 @@ namespace AA
 	void Application::PushOverlay(Layer *layer)
 	{
 		m_LayerStack.PushOverlay(layer);
+	}
+
+	std::string Application::CorrectFilePath(const std::string &path)
+	{
+#if defined(AA_DEBUG) || defined(AA_RELEASE)
+		if (std::filesystem::exists(path)) //Unmodified path check
+			return path;
+
+		auto check_path = std::filesystem::path(".") / m_BaseDirectory / path; //Subdirectory of project
+		if (std::filesystem::exists(check_path))
+			return check_path.string();
+
+		check_path = std::filesystem::path("..") / m_BaseDirectory / path; //Decend to project directory from executable's directory
+		if (std::filesystem::exists(check_path))
+			return check_path.string();
+
+		check_path = std::filesystem::path("../..") / m_BaseDirectory / path; //Decend to project directory from executable's directory
+		if (std::filesystem::exists(check_path))
+			return check_path.string();
+
+		check_path = std::filesystem::path("../../..") / m_BaseDirectory / path; //Decend to project directory from executable's directory
+		if (std::filesystem::exists(check_path))
+			return check_path.string();
+
+#endif
+		return path;
 	}
 
 } // namespace AA

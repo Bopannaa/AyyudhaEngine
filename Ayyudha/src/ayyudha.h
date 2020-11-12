@@ -23,6 +23,7 @@
 #include "ayyudha/renderer/vertexArray.h"
 
 #include "ayyudha/renderer/orthographicCamera.h"
+#include "ayyudha/renderer/texture.h"
 // -----------------------------------
 
 

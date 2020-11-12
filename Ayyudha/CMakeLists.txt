@@ -28,6 +28,9 @@ add_subdirectory(dependencies/imgui)
 set(glm_DIR dependencies/glm/cmake/glm) # if necessary
 find_package(glm REQUIRED)
 
+set (CMAKE_BUILD_TYPE "Debug")
+add_subdirectory(dependencies/stb_image)
+
 set(SRCS 
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/application.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/log.cpp
@@ -44,6 +47,7 @@ set(SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/renderCommand.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/rendererAPI.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/orthographicCamera.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/texture.cpp
     
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxWindow.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/linux/linuxInput.cpp
@@ -52,7 +56,8 @@ set(SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglBuffer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglVertexArray.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglRendererAPI.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglShader.cpp)
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglShader.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglTexture.cpp)
 
 set(HDRS 
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/core/timestep.h
@@ -76,6 +81,7 @@ set(HDRS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/renderCommand.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/rendererAPI.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/orthographicCamera.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/texture.h
 
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/events/event.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/events/applicationEvent.h
@@ -89,7 +95,8 @@ set(HDRS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglBuffer.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglVertexArray.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglRendererAPI.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglShader.h)
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglShader.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/openglTexture.h)
 
 add_library(${PROJECT_NAME} STATIC ${SRCS} ${HDRS})
 
@@ -105,7 +112,7 @@ target_link_libraries(${PROJECT_NAME} -lXrandr
                                         -lpthread
                                         -lstdc++fs)
 
-target_link_libraries(${PROJECT_NAME} spdlog glfw glad imgui glm::glm)
+target_link_libraries(${PROJECT_NAME} spdlog glfw glad imgui glm::glm stb_image)
 
 target_include_directories(${PROJECT_NAME}
     PUBLIC ${CMAKE_SOURCE_DIR}/AyyudhaEngine/Ayyudha/src
@@ -113,11 +120,12 @@ target_include_directories(${PROJECT_NAME}
 
 target_include_directories(${PROJECT_NAME}
     PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/spdlog/include
-    PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/Ayyudha/dependencies/glfw/include
+    PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glfw/include
+    PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/stb_image
     PRIVATE ${GLAD_OUT_DIR}/include)
 
 target_compile_definitions(${PROJECT_NAME} 
-    PUBLIC -DAA_PLATFORM_LINUX -DAA_ENABLE_ASSERTS -DGLFW_INCLUDE_NONE -D_CRT_SECURE_NO_WARNINGS)
+    PUBLIC -DAA_PLATFORM_LINUX -DAA_ENABLE_ASSERTS -DGLFW_INCLUDE_NONE -D_CRT_SECURE_NO_WARNINGS -DAA_DEBUG)
                             
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 17)
 

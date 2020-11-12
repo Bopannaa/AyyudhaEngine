@@ -16,7 +16,7 @@ namespace AA
 	class  Application
 	{
 	public:
-		Application();
+		Application(std::string base_directory);
 		virtual ~Application() = default;
 
 		void Run();
@@ -29,6 +29,8 @@ namespace AA
 
 		inline static Application &Get() { return *s_Instance; }
 
+		std::string CorrectFilePath(const std::string&);
+
 	private:
 		std::unique_ptr<Window> m_Window;
 		ImGuiLayer *m_ImGuiLayer;
@@ -37,6 +39,8 @@ namespace AA
 		LayerStack m_LayerStack;
 
 		float m_LastFrameTime = 0.0f;
+
+		std::string m_BaseDirectory;
 
 	private:
 		static Application *s_Instance;
