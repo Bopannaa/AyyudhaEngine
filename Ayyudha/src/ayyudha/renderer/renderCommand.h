@@ -2,12 +2,18 @@
 
 #include "rendererAPI.h"
 
-namespace AA {
+namespace AA
+{
 
 	class RenderCommand
 	{
 	public:
-		inline static void SetClearColor(const glm::vec4& color)
+		inline static void Init()
+		{
+			s_RendererAPI->Init();
+		}
+		
+		inline static void SetClearColor(const glm::vec4 &color)
 		{
 			s_RendererAPI->SetClearColor(color);
 		}
@@ -17,12 +23,13 @@ namespace AA {
 			s_RendererAPI->Clear();
 		}
 
-		inline static void DrawIndexed(const std::shared_ptr<VertexArray>& vertexArray)
+		inline static void DrawIndexed(const std::shared_ptr<VertexArray> &vertexArray)
 		{
 			s_RendererAPI->DrawIndexed(vertexArray);
 		}
+
 	private:
-		static RendererAPI* s_RendererAPI;
+		static RendererAPI *s_RendererAPI;
 	};
 
-}
+} // namespace AA

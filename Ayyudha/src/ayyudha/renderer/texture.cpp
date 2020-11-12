@@ -10,7 +10,6 @@ namespace AA {
 
 	Ref<Texture2D> Texture2D::Create(const std::string& path)
 	{
-		AA_CORE_INFO(Application::Get().CorrectFilePath(path));
 		switch (Renderer::GetAPI())
 		{
 			case RendererAPI::API::None:    AA_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;

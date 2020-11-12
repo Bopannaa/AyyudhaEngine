@@ -3,8 +3,8 @@
 
 #include "platform/opengl/openglRendererAPI.h"
 
-namespace AA {
+namespace AA
+{
+	RendererAPI *RenderCommand::s_RendererAPI = new OpenGLRendererAPI;
 
-	RendererAPI* RenderCommand::s_RendererAPI = new OpenGLRendererAPI;
-
-}
+} // namespace AA
