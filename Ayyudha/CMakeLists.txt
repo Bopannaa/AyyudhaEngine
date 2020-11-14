@@ -36,6 +36,7 @@ set(SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/log.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/layer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/layerStack.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/orthographicCameraController.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/imgui/imguiLayer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/imgui/imguiBuild.cpp
@@ -72,6 +73,7 @@ set(HDRS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/input.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/keyCodes.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/mouseButtonCodes.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/orthographicCameraController.h
 
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/graphicsContext.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/shader.h
