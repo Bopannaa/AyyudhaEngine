@@ -4,7 +4,7 @@
 
 #include "ayyudha/renderer/renderer.h"
 
-#include "input.h"
+#include "ayyudha/core/input.h"
 
 #include <GLFW/glfw3.h>
 

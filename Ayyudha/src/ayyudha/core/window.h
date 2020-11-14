@@ -2,7 +2,7 @@
 
 #include "aapch.h"
 
-#include "ayyudha/core.h"
+#include "ayyudha/core/core.h"
 #include "ayyudha/events/event.h"
 
 namespace AA {

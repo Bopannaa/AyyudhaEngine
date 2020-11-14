@@ -1,8 +1,8 @@
 #include "aapch.h"
-#include "orthographicCameraController.h"
+#include "ayyudha/core/orthographicCameraController.h"
 
-#include "ayyudha/input.h"
-#include "ayyudha/keyCodes.h"
+#include "ayyudha/core/input.h"
+#include "ayyudha/core/keyCodes.h"
 
 namespace AA {
 

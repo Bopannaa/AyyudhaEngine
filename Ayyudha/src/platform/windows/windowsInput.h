@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ayyudha/input.h"
+#include "ayyudha/core/input.h"
 
 namespace AA {
 

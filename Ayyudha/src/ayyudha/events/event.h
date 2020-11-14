@@ -1,7 +1,7 @@
 #pragma once
 
 #include "aapch.h"
-#include "ayyudha/core.h"
+#include "ayyudha/core/core.h"
 
 namespace AA
 {

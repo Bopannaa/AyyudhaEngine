@@ -1,7 +1,6 @@
-
 #pragma once
 
-#include "ayyudha/core.h"
+#include "ayyudha/core/core.h"
 #include "ayyudha/core/timestep.h"
 #include "ayyudha/events/event.h"
 

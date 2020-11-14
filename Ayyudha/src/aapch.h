@@ -13,7 +13,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include "ayyudha/log.h"
+#include "ayyudha/core/log.h"
 
 #ifdef AA_PLATFORM_WINDOWS
 	#include <Windows.h>

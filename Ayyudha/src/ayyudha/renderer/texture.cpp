@@ -3,8 +3,8 @@
 
 #include "renderer.h"
 #include "platform/opengl/openglTexture.h"
-#include "ayyudha/application.h"
-#include "ayyudha/log.h"
+#include "ayyudha/core/application.h"
+#include "ayyudha/core/log.h"
 
 namespace AA {
 

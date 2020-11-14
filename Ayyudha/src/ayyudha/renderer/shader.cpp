@@ -3,7 +3,7 @@
 
 #include "renderer.h"
 #include "platform/opengl/openglShader.h"
-#include "ayyudha/application.h"
+#include "ayyudha/core/application.h"
 
 namespace AA
 {

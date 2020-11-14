@@ -1,12 +1,12 @@
 #pragma once
 
 #include "aapch.h"
-#include "core.h"
-#include "window.h"
+#include "ayyudha/core/core.h"
+#include "ayyudha/core/window.h"
 
 #include "ayyudha/events/applicationEvent.h"
 #include "ayyudha/events/event.h"
-#include "ayyudha/layerStack.h"
+#include "ayyudha/core/layerStack.h"
 
 #include "ayyudha/imgui/imguiLayer.h"
 

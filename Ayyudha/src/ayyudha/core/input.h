@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ayyudha/core.h"
+#include "ayyudha/core/core.h"
 
 namespace AA
 {

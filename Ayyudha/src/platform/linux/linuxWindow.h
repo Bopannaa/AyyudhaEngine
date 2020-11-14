@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ayyudha/window.h"
+#include "ayyudha/core/window.h"
 #include "ayyudha/renderer/graphicsContext.h"
 #include <GLFW/glfw3.h>
 

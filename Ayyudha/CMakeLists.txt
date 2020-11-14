@@ -32,11 +32,11 @@ set (CMAKE_BUILD_TYPE "Debug")
 add_subdirectory(dependencies/stb_image)
 
 set(SRCS 
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/application.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/log.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/layer.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/layerStack.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/orthographicCameraController.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/core/application.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/core/log.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/core/layer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/core/layerStack.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/core/orthographicCameraController.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/imgui/imguiLayer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/imgui/imguiBuild.cpp
@@ -62,18 +62,17 @@ set(SRCS
 
 set(HDRS 
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/core/timestep.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/application.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/core.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/entrypoint.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/log.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/window.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/layer.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/layerStack.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/imgui/imguiLayer.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/input.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/keyCodes.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/mouseButtonCodes.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/orthographicCameraController.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/core/application.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/core/core.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/core/entrypoint.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/core/log.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/core/window.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/core/layer.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/core/layerStack.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/core/input.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/core/keyCodes.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/core/mouseButtonCodes.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/core/orthographicCameraController.h
 
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/graphicsContext.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/shader.h
@@ -84,6 +83,8 @@ set(HDRS
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/rendererAPI.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/orthographicCamera.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/renderer/texture.h
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/imgui/imguiLayer.h
 
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/events/event.h
     ${CMAKE_CURRENT_SOURCE_DIR}/src/ayyudha/events/applicationEvent.h

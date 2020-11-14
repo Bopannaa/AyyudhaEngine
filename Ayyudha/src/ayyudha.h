@@ -2,16 +2,16 @@
 
 // For use by Ayyudha applications
 
-#include "ayyudha/application.h"
-#include "ayyudha/log.h"
-#include "ayyudha/layer.h"
-#include "ayyudha/orthographicCameraController.h"
+#include "ayyudha/core/application.h"
+#include "ayyudha/core/log.h"
+#include "ayyudha/core/layer.h"
+#include "ayyudha/core/orthographicCameraController.h"
 
 #include "ayyudha/core/timestep.h"
 
-#include "ayyudha/input.h"
-#include "ayyudha/keyCodes.h"
-#include "ayyudha/mouseButtonCodes.h"
+#include "ayyudha/core/input.h"
+#include "ayyudha/core/keyCodes.h"
+#include "ayyudha/core/mouseButtonCodes.h"
 
 #include "ayyudha/imgui/imguiLayer.h"
 
@@ -30,5 +30,5 @@
 
 
 // ---Entry Point---------------------
-#include "ayyudha/entrypoint.h"
+#include "ayyudha/core/entrypoint.h"
 // -----------------------------------

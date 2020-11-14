@@ -1,7 +1,7 @@
 #include "aapch.h"
 #include "windowsInput.h"
 
-#include "ayyudha/application.h"
+#include "ayyudha/core/application.h"
 #include <GLFW/glfw3.h>
 
 namespace AA {
