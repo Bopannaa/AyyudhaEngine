@@ -16,7 +16,7 @@ int main(int argc, char** argv)
 	delete app;
 }
 
-#elif AA_PLATFORM_LINUX
+#elif defined AA_PLATFORM_LINUX
 	extern AA::Application* AA::CreateApplication();
 
 	int main(int argc, char** argv)
